@@ -1,0 +1,129 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  /api/wallet:
+    put:
+      tags:
+      - wallet-controller
+      operationId: updateWallet
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateWalletDTO'
+        required: true
+      responses:
+        "500":
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: string
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: string
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/WalletDTO'
+    post:
+      tags:
+      - wallet-controller
+      operationId: createWallet
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateWalletDTO'
+        required: true
+      responses:
+        "500":
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: string
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: string
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/WalletDTO'
+  /api/hello:
+    get:
+      tags:
+      - hello-world-controller
+      operationId: sayHello
+      responses:
+        "500":
+          description: Internal Server Error
+          content:
+            '*/*':
+              schema:
+                type: string
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                type: string
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+components:
+  schemas:
+    UpdateWalletDTO:
+      required:
+      - id
+      - name
+      type: object
+      properties:
+        id:
+          minimum: 1
+          type: integer
+          format: int64
+        name:
+          maxLength: 20
+          minLength: 0
+          pattern: "[a-z A-Z]+"
+          type: string
+    WalletDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        creationDate:
+          type: string
+          format: date-time
+    CreateWalletDTO:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          maxLength: 20
+          minLength: 0
+          pattern: "[a-z A-Z]+"
+          type: string
