@@ -1,13 +1,13 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "OpenAPI definition test 2",
+    "title": "TrackExpensesApp",
     "version": "v0.2.0"
   },
   "servers": [
     {
       "url": "http://localhost:8080",
-      "description": "Generated server url"
+      "description": "server"
     }
   ],
   "paths": {
@@ -82,46 +82,6 @@
               "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/WalletDTO"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/hello": {
-      "get": {
-        "tags": [
-          "hello-world-controller"
-        ],
-        "operationId": "sayHello",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "string"
                 }
               }
             }
