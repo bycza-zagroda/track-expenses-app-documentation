@@ -13,6 +13,7 @@
   "paths": {
     "/api/wallet": {
       "put": {
+        "summary": "update existing wallet",
         "tags": [
           "wallet-controller"
         ],
@@ -61,6 +62,7 @@
         }
       },
       "post": {
+        "summary": "create new wallet",
         "tags": [
           "wallet-controller"
         ],
@@ -102,6 +104,86 @@
               "*/*": {
                 "schema": {
                   "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "get list of all wallets",
+        "tags": [
+          "wallet-controller"
+        ],
+        "operationId": "findAllWallets",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WalletDTO"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occurred while retrieving the list of wallets",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "WALLETS_LIST_RETRIEVING_ERROR"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wallet/{id}": {
+      "get": {
+        "summary": "get wallet by id",
+        "tags": [
+          "wallet-controller"
+        ],
+        "operationId": "findWallet",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of pet to return",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WalletDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "wallet not found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "WALLET_NOT_FOUND"
                 }
               }
             }
