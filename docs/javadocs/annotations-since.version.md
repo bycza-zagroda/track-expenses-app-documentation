@@ -11,3 +11,7 @@ The Java Software convention for the argument to the @version tag is the SCCS st
 Avoid @author
 
 The @author feature can be used to record the authors of the class. This should be avoided, as it is usually out of date, and it can promote code ownership by an individual. The source control system is in a much better position to record authors. 
+
+
+## Links
+- [javadoc - Man Page](https://www.mankier.com/1/javadoc#Examples_(TL;DR))
