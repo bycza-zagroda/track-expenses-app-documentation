@@ -1,9 +1,6 @@
 # Registration
 
-In order to use the API, you'll have to become a registered user.  
-To do this, send a POST request to:  
-  `[root-url]/api/v1/users`,  
-with the request body containing the following information in JSON format:
+In order to use the API, you'll have to become a registered user.To do this, send a POST request to:`[root-url]/api/v1/users`,with the request body containing the following information in JSON format:
 
 - username
 - password
