@@ -15,7 +15,7 @@
       "put": {
         "summary": "update existing wallet",
         "tags": [
-          "wallet-controller"
+          "Wallets"
         ],
         "operationId": "updateWallet",
         "requestBody": {
@@ -64,7 +64,7 @@
       "post": {
         "summary": "create new wallet",
         "tags": [
-          "wallet-controller"
+          "Wallets"
         ],
         "operationId": "createWallet",
         "requestBody": {
@@ -113,7 +113,7 @@
       "get": {
         "summary": "get list of all wallets",
         "tags": [
-          "wallet-controller"
+          "Wallets"
         ],
         "operationId": "findAllWallets",
         "responses": {
@@ -148,7 +148,7 @@
       "get": {
         "summary": "get wallet by id",
         "tags": [
-          "wallet-controller"
+          "Wallets"
         ],
         "operationId": "findWallet",
         "parameters": [
@@ -184,6 +184,205 @@
                 "schema": {
                   "type": "string",
                   "example": "WALLET_NOT_FOUND"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "delete wallet",
+        "tags": [
+          "Wallets"
+        ],
+        "operationId": "deleteWallet",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wallet/{id}/incomes": {
+      "get": {
+        "summary": "get list of all incomes for specific wallet",
+        "tags": [
+          "Incomes"
+        ],
+        "operationId": "findAllIncomes",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IncomeDTO"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occurred while retrieving the list of incomes",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "INCOMES_LIST_RETRIEVING_ERROR"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create new income",
+        "tags": [
+          "Incomes"
+        ],
+        "operationId": "createIncome",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateIncomeDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/IncomeDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "update income",
+        "tags": [
+          "Incomes"
+        ],
+        "operationId": "updateIncome",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateIncomeDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/IncomeDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wallet/{id}/incomes/{id}": {
+      "delete": {
+        "summary": "delete income",
+        "tags": [
+          "Incomes"
+        ],
+        "operationId": "deleteIncome",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
                 }
               }
             }
@@ -241,6 +440,63 @@
             "minLength": 0,
             "pattern": "[a-z A-Z]+",
             "type": "string"
+          }
+        }
+      },
+      "CreateIncomeDTO": {
+        "required": [
+          "amount"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateIncomeDTO": {
+        "required": [
+          "id",
+          "amount"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "minimum": 1,
+            "type": "integer",
+            "format": "int64"
+          },
+          "amount": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "IncomeDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "float"
+          },
+          "description": {
+            "type": "string",
+            "required": false
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       }
