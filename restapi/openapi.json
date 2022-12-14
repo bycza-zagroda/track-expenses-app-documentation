@@ -11,56 +11,7 @@
     }
   ],
   "paths": {
-    "/api/wallet": {
-      "put": {
-        "summary": "update existing wallet",
-        "tags": [
-          "Wallets"
-        ],
-        "operationId": "updateWallet",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateWalletDTO"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/WalletDTO"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      },
+    "/api/wallets": {
       "post": {
         "summary": "create new wallet",
         "tags": [
@@ -144,30 +95,28 @@
         }
       }
     },
-    "/api/wallet/{id}": {
-      "get": {
-        "summary": "get wallet by id",
+    "/api/wallets/{id}": {
+      "put": {
+        "summary": "update existing wallet",
         "tags": [
           "Wallets"
         ],
-        "operationId": "findWallet",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of pet to return",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
+        "operationId": "updateWallet",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateWalletDTO"
+              }
             }
-          }
-        ],
+          },
+          "required": true
+        },
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "OK",
             "content": {
-              "application/json": {
+              "*/*": {
                 "schema": {
                   "$ref": "#/components/schemas/WalletDTO"
                 }
@@ -175,15 +124,21 @@
             }
           },
           "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "wallet not found",
+            "description": "Bad Request",
             "content": {
-              "text/plain": {
+              "*/*": {
                 "schema": {
-                  "type": "string",
-                  "example": "WALLET_NOT_FOUND"
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
                 }
               }
             }
@@ -223,13 +178,23 @@
         }
       }
     },
-    "/api/wallet/{id}/incomes": {
+    "/api/transactions": {
       "get": {
-        "summary": "get list of all incomes for specific wallet",
+        "summary": "get list of all transactions for specific wallet",
         "tags": [
-          "Incomes"
+          "Transactions"
         ],
-        "operationId": "findAllIncomes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "walletId",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "operationId": "findAllTransactions",
         "responses": {
           "200": {
             "description": "successful operation",
@@ -238,14 +203,14 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/IncomeDTO"
+                    "$ref": "#/components/schemas/TransactionDTO"
                   }
                 }
               }
             }
           },
           "400": {
-            "description": "An error occurred while retrieving the list of incomes",
+            "description": "An error occurred while retrieving the list of transactions",
             "content": {
               "text/plain": {
                 "schema": {
@@ -258,16 +223,16 @@
         }
       },
       "post": {
-        "summary": "create new income",
+        "summary": "create new transaction",
         "tags": [
-          "Incomes"
+          "Transactions"
         ],
-        "operationId": "createIncome",
+        "operationId": "createTransaction",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateIncomeDTO"
+                "$ref": "#/components/schemas/CreateTransactionDTO"
               }
             }
           },
@@ -279,56 +244,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/IncomeDTO"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "summary": "update income",
-        "tags": [
-          "Incomes"
-        ],
-        "operationId": "updateIncome",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateIncomeDTO"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/IncomeDTO"
+                  "$ref": "#/components/schemas/TransactionDTO"
                 }
               }
             }
@@ -356,13 +272,62 @@
         }
       }
     },
-    "/api/wallet/{id}/incomes/{id}": {
-      "delete": {
-        "summary": "delete income",
+    "/api/transactions/{id}": {
+      "put": {
+        "summary": "update transaction",
         "tags": [
-          "Incomes"
+          "Transactions"
         ],
-        "operationId": "deleteIncome",
+        "operationId": "updateTransaction",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTransactionDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "delete transaction",
+        "tags": [
+          "Transactions"
+        ],
+        "operationId": "deleteTransaction",
         "responses": {
           "200": {
             "description": "OK"
@@ -395,16 +360,10 @@
     "schemas": {
       "UpdateWalletDTO": {
         "required": [
-          "id",
           "name"
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "minimum": 1,
-            "type": "integer",
-            "format": "int64"
-          },
           "name": {
             "maxLength": 20,
             "minLength": 0,
@@ -443,29 +402,15 @@
           }
         }
       },
-      "CreateIncomeDTO": {
+      "CreateTransactionDTO": {
         "required": [
-          "amount"
+          "amount",
+          "walletId",
+          "date"
         ],
         "type": "object",
         "properties": {
-          "amount": {
-            "minimum": 0,
-            "type": "number"
-          },
-          "description": {
-            "type": "string"
-          }
-        }
-      },
-      "UpdateIncomeDTO": {
-        "required": [
-          "id",
-          "amount"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
+          "walletId": {
             "minimum": 1,
             "type": "integer",
             "format": "int64"
@@ -474,12 +419,34 @@
             "minimum": 0,
             "type": "number"
           },
+          "date": {
+            "type": "string"
+          },
           "description": {
             "type": "string"
           }
         }
       },
-      "IncomeDTO": {
+      "UpdateTransactionDTO": {
+        "required": [
+          "amount",
+          "date"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "date": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "TransactionDTO": {
         "type": "object",
         "properties": {
           "id": {
