@@ -112,6 +112,16 @@
           },
           "required": true
         },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -149,6 +159,16 @@
         "summary": "delete wallet",
         "tags": [
           "Wallets"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
         ],
         "operationId": "deleteWallet",
         "responses": {
@@ -278,6 +298,16 @@
         "tags": [
           "Transactions"
         ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
         "operationId": "updateTransaction",
         "requestBody": {
           "content": {
@@ -326,6 +356,16 @@
         "summary": "delete transaction",
         "tags": [
           "Transactions"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
         ],
         "operationId": "deleteTransaction",
         "responses": {
@@ -458,8 +498,7 @@
             "format": "float"
           },
           "description": {
-            "type": "string",
-            "required": false
+            "type": "string"
           },
           "creationDate": {
             "type": "string",
