@@ -446,7 +446,8 @@
         "required": [
           "amount",
           "walletId",
-          "date"
+          "date",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -462,6 +463,10 @@
           "date": {
             "type": "string"
           },
+          "type": {
+            "type": "string",
+            "enum": ["income", "expense"]
+          },
           "description": {
             "type": "string"
           }
@@ -470,7 +475,8 @@
       "UpdateTransactionDTO": {
         "required": [
           "amount",
-          "date"
+          "date",
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -480,6 +486,10 @@
           },
           "date": {
             "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["income", "expense"]
           },
           "description": {
             "type": "string"
@@ -499,6 +509,10 @@
           },
           "description": {
             "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["income", "expense"]
           },
           "creationDate": {
             "type": "string",
