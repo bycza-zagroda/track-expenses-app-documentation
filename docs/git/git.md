@@ -12,3 +12,4 @@ niebędący wolnym oprogramowaniem, system kontroli wersji BitKeeper.
 - [New default branch name - "main"](https://about.gitlab.com/blog/2021/03/10/new-git-default-branch-name/)
 - [Jinkubator #21 - Git - Adam Ruka](https://www.youtube.com/watch?v=RP7-d3ZCdZs)
 - [Git - stash](https://kosiorowski.net/2016/04/10/git-stash-czyli-slowo-o-rzeczy-zapomnianej/)
+- [Dlaczego warto: git reset --hard ](https://stormit.pl/git-reset/)
