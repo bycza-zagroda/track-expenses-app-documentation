@@ -5,9 +5,7 @@ Liquibase is a database migration tool, not a data insertion tool. It is used to
 
 ## Informacje
 W projekcie ustaliliśmy, że baza deweloperska będzie zawierała przykładowe dane. Ponieważ używamy Liquibase do 
-zarządzania schematem bazy zdecydowaliśmy, że wykorzystamy to narzędzie także do wprowadzania tych danych. Czy jest 
-to zgodne ze sztuką? Czy można użyć Liquibase do wstawiania przykładowych danych w bazie developerskiej tak jak 
-zrobiliśmy to w przypadku tabeli `wallets`?
+zarządzania schematem bazy zdecydowaliśmy, że wykorzystamy to narzędzie także do wprowadzania tych danych. Czy jest to zgodne ze sztuką? Czy można użyć Liquibase do wstawiania przykładowych danych w bazie developerskiej tak jak zrobiliśmy to w przypadku tabeli `wallets`?
   
 W takim razie nic nie stoi na przeszkodzie, żeby dodać changeset-a z danym.
 Myślę, że na czas development-u może to być wygodniejsze niż wrzucanie danych ręcznie do bazy czy pisanie w tym celu 
