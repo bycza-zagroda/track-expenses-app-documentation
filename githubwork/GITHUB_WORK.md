@@ -81,6 +81,11 @@ that you selected **_Create draft pull request_** and click on button **_Draft p
 
 ---
 
+When creating a pull request, set the related issue in the Development section.
+
+![select a issue for a pull request](images/img017_development_issue.png)
+
+
 Now you can start working with the task. 
 
 ## Commits
