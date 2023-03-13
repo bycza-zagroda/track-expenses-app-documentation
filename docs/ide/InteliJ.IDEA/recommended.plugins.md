@@ -11,3 +11,10 @@
   IntelliJ IDEA already supports full-fledged Git integration, but this plugin offers additional minor features to suit your personal needs. People get it primarily for inline blame – the annotation that shows who changed code in a line and when. GitToolBox also adds status display, auto fetch, behind notifications, and more.
 - [Encrypt Tool] - installed from Marketplace  
   Encrypting files or selected text in the file on demand.
+  
+  
+  // TODO
+  - add checkstyl
+  - add SonarLint
+  - raindbow for csv files
+  - 
