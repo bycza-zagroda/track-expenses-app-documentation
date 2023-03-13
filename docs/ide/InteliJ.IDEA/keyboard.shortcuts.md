@@ -18,3 +18,11 @@ Trzeba pamiętać, że skróty mogą działać pod innym schematem ustawień skr
     Call Hierarchy                          Ctrl + Alt + H
 
     Navigate members from current class     Ctrl + F3
+    
+    Show members of the class               CTRL  + F12
+    
+    Find a class / file                     Double press Shift
+    
+    Find in files                           Ctrl + Shift + F
+    
+    
