@@ -42,8 +42,8 @@
 
 ## Do której sekcji chcesz dołączyć?:
 
-   - Front-end
    - Back-end
+   - Front-end
    - Fullstack
    - Database
 - - -
