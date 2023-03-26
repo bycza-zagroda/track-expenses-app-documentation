@@ -37,11 +37,16 @@ Paweł `purbanski-deftcode`
     - <https://adr.github.io/>
     - <https://github.com/joelparkerhenderson/architecture-decision-record> 
     - <https://github.com/bycza-zagroda/track-expenses-app-documentation/tree/develop/architecture/decisions>
-  - [Request for comments - czyli nasz odpowiednik ADR]
-     - <https://en.wikipedia.org/wiki/Request_for_Comments>
-     - <https://www.rfc-editor.org/rfc/>
-     - <https://en.wikipedia.org/wiki/Request_for_Comments>
-     - <https://wiki.wireshark.org/RFC.md>
+
+[//]: # (  - [Request for comments - czyli nasz odpowiednik ADR])
+
+[//]: # (     - <https://en.wikipedia.org/wiki/Request_for_Comments>)
+
+[//]: # (     - <https://www.rfc-editor.org/rfc/>)
+
+[//]: # (     - <https://en.wikipedia.org/wiki/Request_for_Comments>)
+
+[//]: # (     - <https://wiki.wireshark.org/RFC.md>)
 - - -
 
 ## Do której sekcji chcesz dołączyć?:
@@ -50,6 +55,7 @@ Paweł `purbanski-deftcode`
    - Front-end
    - Fullstack
    - Database
+   - [DevOps](https://pl.wikipedia.org/wiki/DevOps)
 - - -
 
 ## Dodać nowego developera do rozpiski `contributors` na `#os-liders`.
