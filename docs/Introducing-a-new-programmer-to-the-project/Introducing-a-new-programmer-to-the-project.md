@@ -49,7 +49,7 @@ Paweł `purbanski-deftcode`
 [//]: # (     - <https://wiki.wireshark.org/RFC.md>)
 - - -
 
-## Do której sekcji chcesz dołączyć?:
+## Do której sekcji chcesz dołączyć?
 
    - Back-end
    - Front-end
@@ -62,7 +62,7 @@ Paweł `purbanski-deftcode`
 
 - - -
 
-## Jak duże doświadczenie masz z programowaniem. Konkretnie:
+## Jakie masz doświadczenie z programowaniem?
 
    - Ile czasu zajmujesz się programowaniem?
    - Ile czasu hobbystycznie, ile zawodowo z Java SE/ Java EE?
@@ -93,11 +93,11 @@ W ten sposób twoje lokalne repozytorium jest aktualne, a to oznacza, że nie po
 
 ## Konfiguracja bazy danych
 
-Nazwa bazy danych: *trackexpensesapp*  
-Użytkownik: *root*  
-Hasło: *password* lub *root*  
-Adres IP dla bazy zainstalowanej jako standalone: *127.0.01*  
-Adres IP bazy danych pod docker-em: *172.17.0.1*  
+Nazwa bazy danych: ***trackexpensesapp***  
+Użytkownik: ***root***  
+Hasło: ***password*** lub ***root***  
+Adres IP dla bazy zainstalowanej jako standalone: ***127.0.01***  
+Adres IP bazy danych pod docker-em: ***172.17.0.1***  
 &nbsp;&nbsp;&nbsp; Może się okazać, że adres bazy danych pod Docker-em będzie minimalnie inny.
 
 ### Konfiguracja baza danych zainstalowana jako standalone
