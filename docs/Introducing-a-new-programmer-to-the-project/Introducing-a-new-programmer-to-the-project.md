@@ -5,8 +5,8 @@
    - Owner [ _Przemek Bykowski_ ]
    - Management [ _Iwona, Mirek_ ]
    - Liders
-     - Front-end [ _defcode_ ]
      - Back-end [ _dawciobiel, defcode33, Krisu_ ]
+     - Front-end [ _defcode_ ]
    - Developers
    - Coach, administrative technician
 
