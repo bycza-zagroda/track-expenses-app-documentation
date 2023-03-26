@@ -5,10 +5,10 @@
 
 ### Osobowa struktura organizacyjna projektu.
    - Owner [ _Przemek Bykowski_ ]
-   - Management [ _Iwona, Mirek_ ]
+   - Management [ _Iwona "Iwona007", Mirek "mirekgab"_ ]
    - Liders
-     - Back-end [ _dawciobiel, defcode33, Krisu_ ]
-     - Front-end [ _defcode_ ]
+     - Back-end [ _Dawid "dawciobiel" Bielecki, Piotr "odzio33", Krzysztof "Krisu"_ ]
+     - Front-end [ _Paweł "purbanski-deftcode"_ ]
    - Developers
    - Coach, administrative technician
 - - -
