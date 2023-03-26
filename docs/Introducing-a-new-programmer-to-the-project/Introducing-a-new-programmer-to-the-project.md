@@ -1,5 +1,7 @@
 
-## Projekt
+# Projekt *Track Expenses App*
+
+- - -
 
 ### Osobowa struktura organizacyjna projektu.
    - Owner [ _Przemek Bykowski_ ]
@@ -9,10 +11,9 @@
      - Front-end [ _defcode_ ]
    - Developers
    - Coach, administrative technician
-
 - - -
 
-## Repozytorium bycza-zagroda
+## Repozytorium projektu
 
    - <https://github.com/bycza-zagroda>
    - <https://github.com/bycza-zagroda/track-expenses-app-backend>
@@ -105,12 +106,14 @@ docker pull mysql
 
 docker run --name track-expenses-database -e MYSQL_ROOT_PASSWORD=password -p 3308:3306 -d mysql
 
-# następnie wbijasz się do kontenera:
+# Połączenie z kontenerem:
 docker exec -it track-expenses-database mysql -u root -p
 
-# tworzysz usera:
+# Tworzenie user-a:
 create user 'root'@'172.17.0.1' identified by 'root';
 
-# nadajesz uprawnienia:
+# Nadawanie uprawnień:
 grant all on *.* to 'root'@'172.17.0.1';
 ```
+
+- - -
