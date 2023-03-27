@@ -119,10 +119,13 @@ docker run --name track-expenses-database -e MYSQL_ROOT_PASSWORD=password -p 330
 docker exec -it track-expenses-database mysql -u root -p
 
 # Tworzenie user-a:
-create user 'root'@'172.17.0.1' identified by 'root';
+mysql> create user 'root'@'172.17.0.1' identified by 'root';
 
 # Nadawanie uprawnień:
-grant all on *.* to 'root'@'172.17.0.1';
+mysql> grant all on *.* to 'root'@'172.17.0.1';
+
+mysql> exit
+
 ```
 
 - - -
