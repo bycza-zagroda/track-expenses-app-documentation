@@ -119,7 +119,7 @@ mysql -u root -p
 
 ```bash
 mysql> CREATE DATABASE trackexpensesapp;
-mysql> CREATE USER 'root'@'localhost' IDENTIFIED BY 'passwordForUser_rootMySQL2023';
+mysql> CREATE USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'passwordMySQL2023';
 mysql> GRANT ALL PRIVILEGES ON trackexpensesapp.* TO 'root'@'localhost';
 mysql> FLUSH PRIVILEGES;
 mysql> exit
@@ -132,15 +132,17 @@ docker pull mysql
 docker run --name track-expenses-database -e MYSQL_ROOT_PASSWORD=password -p 3308:3306 -d mysql
 
 # Połączenie z kontenerem:
-docker exec -it track-expenses-database mysql -u root -p
+   docker exec -it track-expenses-database mysql -u root
+# lub z zapytaniem o hasło
+   docker exec -it track-expenses-database mysql -u root -p
 
 # Tworzenie user-a:
-create user 'root'@'172.17.0.1' identified by 'passwordForUser_rootMySQL2023';
+create user 'root'@'172.17.0.1' identified with mysql_native_password by 'passwordMySQL2023';
 
 # Nadawanie uprawnień:
 grant all on *.* to 'root'@'172.17.0.1';
 ```
 
-Remember your password for user 'root' is 'passwordForUser_rootMySQL2023' and you have to set it in proper files in project.
+Remember your password for user 'root' is 'passwordMySQL2023' and you have to set it in proper files in project.
 
 - - -
