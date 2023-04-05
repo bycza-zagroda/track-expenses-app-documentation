@@ -102,6 +102,9 @@ Adres IP bazy danych pod docker-em: ***172.17.0.1***
 
 ### Konfiguracja baza danych zainstalowana jako standalone
 
+**Link do dokumentacji**
+<https://www.hostinger.com/tutorials/mysql/how-create-mysql-user-and-grant-permissions-command-line>
+
 you need to precede the mysql command with sudo to invoke it with the privileges of the root Ubuntu user in order to gain access to the root MySQL user:
 
 ```bash
