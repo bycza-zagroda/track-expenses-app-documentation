@@ -101,9 +101,22 @@ Adres IP bazy danych pod docker-em: ***172.17.0.1***
 &nbsp;&nbsp;&nbsp; Może się okazać, że adres bazy danych pod Docker-em będzie minimalnie inny.
 
 ### Konfiguracja baza danych zainstalowana jako standalone
+
+you need to precede the mysql command with sudo to invoke it with the privileges of the root Ubuntu user in order to gain access to the root MySQL user:
+
+```bash
+sudo mysql
+```
+
+Note: If your root MySQL user is configured to authenticate with a password, you will need to use a different command to access the MySQL shell. The following will run your MySQL client with regular user privileges, and you will only gain administrator privileges within the database by authenticating with the correct password:
+
+```bash
+mysql -u root -p
+```
+
 ```bash
 mysql> CREATE DATABASE trackexpensesapp;
-mysql> CREATE USER 'root'@'localhost' IDENTIFIED BY "password";
+mysql> CREATE USER 'root'@'localhost' IDENTIFIED BY 'passwordForUser_rootMySQL2023';
 mysql> GRANT ALL PRIVILEGES ON trackexpensesapp.* TO 'root'@'localhost';
 mysql> FLUSH PRIVILEGES;
 mysql> exit
@@ -119,10 +132,12 @@ docker run --name track-expenses-database -e MYSQL_ROOT_PASSWORD=password -p 330
 docker exec -it track-expenses-database mysql -u root -p
 
 # Tworzenie user-a:
-create user 'root'@'172.17.0.1' identified by 'root';
+create user 'root'@'172.17.0.1' identified by 'passwordForUser_rootMySQL2023';
 
 # Nadawanie uprawnień:
 grant all on *.* to 'root'@'172.17.0.1';
 ```
+
+Remember your password for user 'root' is 'passwordForUser_rootMySQL2023' and you have to set it in proper files in project.
 
 - - -
