@@ -139,6 +139,6 @@ class DisplayNameDemo {
 ```
 
 ## Links
-- https://junit.org/junit5/docs/current/user-guide/#writing-tests
-- https://junit.org/junit5/docs/current/user-guide/#writing-tests-display-names
-- https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests
+- [JUnit 5 User Guide - writing tests](https://junit.org/junit5/docs/current/user-guide/#writing-tests)
+- [JUnit 5 User Guide - writing tests - display-names](https://junit.org/junit5/docs/current/user-guide/#writing-tests-display-names)
+- [JUnit 5 User Guide - writing tests - parameterized tests](https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests)
