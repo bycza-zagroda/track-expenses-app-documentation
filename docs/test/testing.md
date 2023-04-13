@@ -1,4 +1,6 @@
-Naming Conventions in Tests: A Guide for Developers
+# Testing the code
+
+## Naming Conventions in Tests: A Guide for Developers
 
 Naming conventions in tests are important for writing code that is easy to read and maintain. Good test names should
 convey what the test does and what it is testing, and should follow a consistent style throughout your codebase.
@@ -18,13 +20,14 @@ some general naming conventions to follow:
 For example, if you are testing a function that calculates the sum of two numbers, a good name for the test might be:
 
 ```java
+@DisplayName("Appropriate description of the test")
 @Test
-public void shouldCalculateSumOfTwoNumbers(){
-// Test code here
-        }
+public void testXXX_WhenXXX_ThenXXX() {
+   // Test code here
+}
 ```
 
-Given-When-Then Naming Conventions
+## Given-When-Then Naming Conventions
 
 Another popular naming convention for tests is the "Given-When-Then" style. This style breaks down the test into three
 parts:
@@ -36,10 +39,11 @@ parts:
 This style can be very useful for complex tests that have multiple steps. Here's an example:
 
 ```java
+@DisplayName("Appropriate description of the test")
 @Test
 public void givenValidUser_whenLogin_thenUserIsAuthenticated(){
-// Test code here
-        }
+   // Test code here
+}
 ```
 
 In this test, the "Given" part is the valid user, the "When" part is the login action, and the "Then" part is the
@@ -50,10 +54,11 @@ When testing exceptions, it is important to include the word "throws" in the tes
 exception being thrown. Here's an example:
 
 ```java
+@DisplayName("Appropriate description of the test")
 @Test
 public void shouldThrowExceptionWhenInputIsNull(){
-// Test code here
-        }
+   // Test code here
+}
 ```
 
 In this test, we are testing whether an exception is thrown when the input is null.
@@ -63,7 +68,7 @@ Naming conventions in tests are important for writing code that is easy to read 
 conventions, you can create test names that are descriptive and convey the purpose of the test. This will help you and
 other developers working on the codebase understand what the tests are doing and how they are testing the code.
 
-Good Practices in Testing with Spring Boot
+## Good Practices in Testing with Spring Boot
 
 Testing is an essential part of software development, and in Spring Boot applications, testing is even more critical due
 to the complexity of the framework. Here are some good practices to follow when testing your Spring Boot applications:
@@ -115,76 +120,25 @@ By following these good practices, you can ensure that your Spring Boot applicat
 Testing is a critical part of the development process, and by investing time and effort in testing, you can ensure that
 your code is of the highest quality.
 
-Integration Test Example
+## Display Names
+Test classes and test methods can declare custom display names via `@DisplayName` — with spaces, special characters, and even emojis — that will be displayed in test reports and by test runners and IDEs.
+
+Adnotacja DisplayName w testach Java służy do nadania czytelnej nazwy testowi, która będzie wyświetlana podczas uruchamiania testów. Wartość tej adnotacji powinna być krótkim, opisowym opisem testu. Powinna być jasna i zwięzła, aby pomóc użytkownikowi w identyfikacji testu i jego funkcjonalności.
 
 ```java
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
-public class UserControllerIntegrationTest {
+@DisplayName("A special test case")
+class DisplayNameDemo {
 
-    @Autowired
-    private MockMvc mockMvc;
-
-    @Autowired
-    private ObjectMapper objectMapper;
-
-    @Autowired
-    private UserRepository userRepository;
-
+    @DisplayName("Custom test name containing spaces")
     @Test
-    public void whenPostRequestToUsersAndValidUser_thenCorrectResponse() throws Exception {
-        UserDto user = new UserDto("John", "Doe");
-
-        mockMvc.perform(post("/users")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(user)))
-                .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.firstName", is(user.getFirstName())))
-                .andExpect(jsonPath("$.lastName", is(user.getLastName())));
-
-        User savedUser = userRepository.findAll().get(0);
-        assertThat(savedUser.getFirstName()).isEqualTo(user.getFirstName());
-        assertThat(savedUser.getLastName()).isEqualTo(user.getLastName());
+    void testWithDisplayNameContainingSpaces() {
     }
-}
 ```
 
-This integration test uses MockMvc to simulate an HTTP request and test the entire stack of the application, including
-the controller, service, and repository layers. The test ensures that the UserController correctly handles the request
-and that the data is saved in the database.
-
-Unit Test Example
-
-```java
-public class CalculatorTest {
-
-    private Calculator calculator;
-
-    @Before
-    public void setUp() {
-        calculator = new Calculator();
-    }
-
-    @Test
-    public void whenAddTwoNumbers_thenCorrectResult() {
-        int result = calculator.add(2, 3);
-        assertThat(result).isEqualTo(5);
-    }
-
-    @Test
-    public void whenSubtractTwoNumbers_thenCorrectResult() {
-        int result = calculator.subtract(5, 3);
-        assertThat(result).isEqualTo(2);
-    }
-}
-```
-
-This unit test tests the Calculator class's add() and subtract() methods. The test creates an instance of the Calculator
-class in the setUp() method and tests each method independently. The test ensures that the methods return the correct
-results for the given input.
-
-Both of these examples follow good practices for testing in Spring Boot. The integration test uses MockMvc to test the
-entire stack, and the unit test tests a single class's methods in isolation. The tests are well-organized, use
-descriptive names, and ensure that the code is well-tested.
+## Links
+- https://junit.org/junit5/docs/current/user-guide/#writing-tests
+- https://junit.org/junit5/docs/current/user-guide/#writing-tests-display-names
+- https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests
