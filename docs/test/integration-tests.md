@@ -28,6 +28,7 @@ public class UserControllerIntegrationTest {
     @Autowired
     private UserRepository userRepository;
 
+    @DisplayName("Proper description of the test")
     @Test
     public void whenPostRequestToUsersAndValidUser_thenCorrectResponse() throws Exception {
         UserDto user = new UserDto("John", "Doe");
@@ -56,5 +57,5 @@ use descriptive names, and ensure that the code is well-tested.
 ## Links
 
 - [Integration Testing in Spring](https://www.baeldung.com/integration-testing-in-spring)
-
+- [How to Use Java Integration Testing](https://www.jrebel.com/blog/how-to-use-java-integration-testing)
 
