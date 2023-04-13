@@ -50,7 +50,7 @@ This integration test uses MockMvc to simulate an HTTP request and test the enti
 the controller, service, and repository layers. The test ensures that the UserController correctly handles the request
 and that the data is saved in the database.
 
-Example follow good practices for testing in Spring Boot. Uses MockMvc to test the entire stack. The test is well-organized, 
+This test example follow good practices for testing in Spring Boot. Uses MockMvc to test the entire stack. The test is well-organized, 
 use descriptive names, and ensure that the code is well-tested.
 
 ## Links
