@@ -14,12 +14,14 @@ public class CalculatorTest {
         calculator = new Calculator();
     }
 
+    @DisplayName("When the two numbers are added the result will be correct")
     @Test
     public void whenAddTwoNumbers_thenCorrectResult() {
         int result = calculator.add(2, 3);
         assertThat(result).isEqualTo(5);
     }
 
+    @DisplayName("When two numbers are subtracted, the result will be correct")
     @Test
     public void whenSubtractTwoNumbers_thenCorrectResult() {
         int result = calculator.subtract(5, 3);
