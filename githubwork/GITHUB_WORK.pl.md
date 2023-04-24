@@ -77,6 +77,10 @@ git push
 
 ---
 
+Po utworzeniu pull requesta powiąż go z odpowiednim issue. Zrobisz to w sekcji Development. 
+
+![select a issue for a pull request](images/img017_development_issue.png)
+
 Od teraz możesz zacząć pracę nad zadaniem!
 
 ## Komity
@@ -131,7 +135,7 @@ git checkout feature/1-feature-name
 ```shell
 git merge develop
 ```
-Jeżeli nie pojawiły się błędny, można wysłać branch `feature/1-feature-name` do repozytorium zdalnego (fork).
+Jeżeli nie pojawiły się błędy, można wysłać branch `feature/1-feature-name` do repozytorium zdalnego (fork).
 
 Jeżeli istnieją konflikty ukaże się komunikat jak poniżej:
 
