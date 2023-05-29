@@ -9,7 +9,7 @@
 Iwona `Iwona007`, Mirek `mirekgab`
    - Liders
      - Back-end  
-Dawid `dawciobiel` Bielecki, Piotr `odzio33`, Krzysztof `Krisu`
+Dawid `dawciobiel` Bielecki, Piotr `odzio33`, Krzysztof `Krisu`, Kacper `poneciak57`
      - Front-end  
 Paweł `purbanski-deftcode`
    - Developers
