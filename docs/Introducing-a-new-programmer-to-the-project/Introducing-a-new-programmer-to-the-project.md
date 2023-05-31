@@ -20,8 +20,8 @@ Paweł `purbanski-deftcode`, `Iselii`
 
    - <https://github.com/bycza-zagroda>
    - <https://github.com/bycza-zagroda/track-expenses-app-backend>
-   - <https://github.com/bycza-zagroda/track-expenses-app-documentation>
    - <https://github.com/bycza-zagroda/track-expenses-app-frontend>
+   - <https://github.com/bycza-zagroda/track-expenses-app-documentation>
 
 ## Dokumentacja
 
@@ -51,8 +51,8 @@ Paweł `purbanski-deftcode`, `Iselii`
 
 ## Do której sekcji chcesz dołączyć?
 
-   - Back-end
-   - Front-end
+   - Backend
+   - Frontend
    - Fullstack
    - Database
    - [DevOps](https://pl.wikipedia.org/wiki/DevOps)
