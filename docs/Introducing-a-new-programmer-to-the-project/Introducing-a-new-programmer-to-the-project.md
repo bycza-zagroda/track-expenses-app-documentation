@@ -11,7 +11,7 @@ Iwona `Iwona007`, Mirek `mirekgab`
      - Back-end  
 Dawid `dawciobiel` Bielecki, Piotr `odzio33`, Krzysztof `Krisu`, Kacper `poneciak57`
      - Front-end  
-Paweł `purbanski-deftcode`, Iselii
+Paweł `purbanski-deftcode`, `Iselii`
    - Developers
    - Coach, administrative technician
 - - -
