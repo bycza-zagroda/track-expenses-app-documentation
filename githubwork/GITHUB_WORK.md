@@ -81,7 +81,7 @@ that you selected **_Create draft pull request_** and click on button **_Draft p
 
 ---
 
-After creating a pull request, link it to the issue in the Development section.
+After creating a draft pull request, link it to the issue in the Development section.
 
 ![select a issue for a pull request](images/img017_development_issue.png)
 
