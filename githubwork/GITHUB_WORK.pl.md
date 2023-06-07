@@ -77,7 +77,7 @@ git push
 
 ---
 
-Po utworzeniu pull requesta powiąż go z odpowiednim issue. Zrobisz to w sekcji Development. 
+Po utworzeniu draft pull request powiąż go z odpowiednim issue. Zrobisz to w sekcji Development. 
 
 ![select a issue for a pull request](images/img017_development_issue.png)
 
