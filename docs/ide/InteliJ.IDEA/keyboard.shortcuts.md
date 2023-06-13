@@ -4,25 +4,19 @@ Trzeba pamiętać, że skróty mogą działać pod innym schematem ustawień skr
 
 
 
-**View**
-
-    View all exit points for the method     Alt + Shit + O
-
-
-**Navigate**
-
-    Type Hierarchy                          F4
+| **&nbsp;&nbsp;&nbsp;&nbsp;Shortcut&nbsp;&nbsp;&nbsp;&nbsp;** 	|                                     **Action**                                     	|                                **Preview link**                                	|
+|:----------------------------------------------:	|:----------------------------------------------------------------------------------:	|:------------------------------------------------------------------------------:	|
+| Alt + Shit + O                                 	| View all exit points for the method                                                	|                                                                                	|
+| F4                                             	| Type Hierarchy                                                                     	|                                                                                	|
+| Ctrl + Shift + H                               	| Method Hierarchy                                                                   	|                                                                                	|
+| Ctrl + Alt + H                                 	| Call Hierarchy                                                                     	|                                                                                	|
+| Ctrl + F3                                      	| Navigate members from current class                                                	|                                                                                	|
+| CTRL  + F12                                    	| Show members of the class                                                          	|                                                                                	|
+| Double press Shift                             	| Find a class / file                                                                	|                                                                                	|
+| Ctrl + Shift + F                               	| Find in files                                                                      	|                                                                                	|
+| Ctrl + W                                       	| Extend or shrink selection                                                         	| https://www.jetbrains.com/help/idea/working-with-source-code.html#code_folding 	|
+| Ctrl + Shift + W                               	| Increase or decrease the scope of selection according to specific code constructs. 	|                                                                                	|
     
-    Method Hierarchy                        Ctrl + Shift + H
+**Link**
 
-    Call Hierarchy                          Ctrl + Alt + H
-
-    Navigate members from current class     Ctrl + F3
-    
-    Show members of the class               CTRL  + F12
-    
-    Find a class / file                     Double press Shift
-    
-    Find in files                           Ctrl + Shift + F
-    
-    
+- https://www.jetbrains.com/help/idea/mastering-keyboard-shortcuts.html
