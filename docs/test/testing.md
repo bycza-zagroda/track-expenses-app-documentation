@@ -136,9 +136,15 @@ class DisplayNameDemo {
     @Test
     void testWithDisplayNameContainingSpaces() {
     }
+    
+    // ...
+}
 ```
 
 ## Links
 - [JUnit 5 User Guide - writing tests](https://junit.org/junit5/docs/current/user-guide/#writing-tests)
 - [JUnit 5 User Guide - writing tests - display-names](https://junit.org/junit5/docs/current/user-guide/#writing-tests-display-names)
 - [JUnit 5 User Guide - writing tests - parameterized tests](https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests)
+- [Given When Then in Java](https://www.javacodegeeks.com/2015/01/given-when-then-in-java.html)
+- [Given When Then w testach](https://javastart.pl/baza-wiedzy/testowanie-jednostkowe/given-when-then-w-testach)
+- [Lambda Behave - A modern testing and behavioural specification framework for Java 8](http://richardwarburton.github.io/lambda-behave/)
