@@ -39,3 +39,7 @@ _mail.jar_, which can be downloaded from
 
     http://java.sun.com/products/javamail/
 
+## Links
+- [Praktyczna Java. Biblioteki do logowania](https://kobietydokodu.pl/praktyczna-java-biblioteki-do-logowania/)
+
+
